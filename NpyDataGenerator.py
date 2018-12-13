@@ -40,7 +40,7 @@ class NpyDataGenerator(object):
                 npydata = img_to_array(load_img(str(directory)+"/"+label_data_path, target_size=(224,224)))
                 #print(name+":"+label+":",npydata.shape)
 
-                self.data.append(npydata)
+                self.data.append(npydata/255)
                 self.labels.append(to_categorical(classes[label], len(classes)))
 
                 # ここまでを繰り返し行い、batch_sizeの数だけ配列(self.data, self.labels)に格納
